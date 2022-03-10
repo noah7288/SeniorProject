@@ -5,16 +5,20 @@ using UnityEngine;
 public class PlayerController : MonoBehaviour
 {
 
-    public float moveSpeed = 5.0f;
-    // Start is called before the first frame update
+    public float moveSpeed = 10.0f;
     void Start()
     {
         
     }
 
-    // Update is called once per frame
     void Update()
     {
+        Controls();
+
+    }
+
+    void Controls() 
+        {
         Vector3 movement = new Vector3(Input.GetAxis("Horizontal"), Input.GetAxis("Vertical"), 0f);
         transform.position += movement * Time.deltaTime * moveSpeed;
 
@@ -27,6 +31,5 @@ public class PlayerController : MonoBehaviour
 
         float angle = Mathf.Atan2(mousePos.y, mousePos.x) * Mathf.Rad2Deg;
         transform.rotation = Quaternion.Euler(new Vector3(0, 0, angle));
-
-    }
+    } 
 }

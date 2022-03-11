@@ -4,16 +4,18 @@ using UnityEngine;
 
 public class Projectile : MonoBehaviour
 {
-    public int projectileSpeed = 400;
+    
+    //public int projectileSpeed = 400;
     public float projectileLifeTime = 5.0f;
     private Collider2D cl;
     private Rigidbody2D rb;
+    
     //public Component Rigidbody2d;
     void Start()
     {
         cl = gameObject.GetComponent<CircleCollider2D>();
         rb = gameObject.GetComponent<Rigidbody2D>();
-        Shoot();
+        
         
     }
 
@@ -22,13 +24,17 @@ public class Projectile : MonoBehaviour
     {
 
         DestroyProjectile();
+
+        
+
+    }
+
+    void FixedUpdate()
+    {
         
     }
 
-    void Shoot()
-    {
-        rb.AddForce(transform.forward * projectileSpeed);
-    }
+    
 
     void DestroyProjectile()
     {
@@ -38,13 +44,12 @@ public class Projectile : MonoBehaviour
         {
             Destroy(gameObject);
         }
-     /*
-        if (other.sTouching(cl))
-        {
-            DestroyProjectile(gameObject);
-        }
-          */    
+        
     }
 
+    private void OnTriggerEnter2D(Collider2D other)
+    {
+        Destroy(gameObject);
+    }
     
 }

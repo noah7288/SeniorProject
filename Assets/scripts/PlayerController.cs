@@ -4,17 +4,22 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
+    public GameObject projectile;
+    public Transform gunEnd;
+    public float projectileSpeed = 10f;
 
     public float moveSpeed = 10.0f;
-    void Start()
-    {
-        
-    }
+
+    //public int playerDamage = 1;
+    
 
     void Update()
     {
         Controls();
-
+        if (Input.GetButtonDown("Fire1"))
+        {
+            Shoot();
+        }
     }
 
     void Controls() 
@@ -32,4 +37,11 @@ public class PlayerController : MonoBehaviour
         float angle = Mathf.Atan2(mousePos.y, mousePos.x) * Mathf.Rad2Deg;
         transform.rotation = Quaternion.Euler(new Vector3(0, 0, angle));
     } 
+
+    void Shoot()
+    {
+        GameObject bullet = Instantiate(projectile, gunEnd.position, gunEnd.rotation);
+        Rigidbody2D rb = bullet.GetComponent<Rigidbody2D>();
+        rb.AddForce(gunEnd.up * projectileSpeed, ForceMode2D.Impulse);
+    }
 }

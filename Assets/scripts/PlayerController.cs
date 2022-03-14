@@ -8,18 +8,35 @@ public class PlayerController : MonoBehaviour
     public Transform gunEnd;
     public float projectileSpeed = 10f;
 
+    public bool IsAlive;
+
+    public float shootCooldown = 10;
+
     public float moveSpeed = 10.0f;
 
-    //public int playerDamage = 1;
-    
+    public int playerDamage = 1;
+
+    public int playerHealth = 15;
+
+
+    void start()
+    {
+        IsAlive = true;
+    }
 
     void Update()
     {
         Controls();
-        if (Input.GetButtonDown("Fire1"))
+        if (Input.GetButtonDown("Fire1") & shootCooldown >= 1)
         {
             Shoot();
         }
+        Death();
+    }
+
+    void FixedUpdate()
+    {
+         ShootTime();
     }
 
     void Controls() 
@@ -40,8 +57,39 @@ public class PlayerController : MonoBehaviour
 
     void Shoot()
     {
+        
         GameObject bullet = Instantiate(projectile, gunEnd.position, gunEnd.rotation);
         Rigidbody2D rb = bullet.GetComponent<Rigidbody2D>();
         rb.AddForce(gunEnd.up * projectileSpeed, ForceMode2D.Impulse);
+        shootCooldown = shootCooldown - 1;
+    }
+
+    void ShootTime()
+    {
+        if (shootCooldown <= 10)
+        {
+            shootCooldown = shootCooldown + Time.deltaTime;
+        }
+    }
+
+    private void OnTriggerEnter2D(Collider2D other)
+    {
+        if(other.gameObject.tag == "Powerup")
+        {
+            playerDamage++;
+        }
+        if(other.gameObject.tag == "EnemyProjectile")
+        {
+            playerHealth = playerHealth - 1;//change 1 to enemy damage variable
+        }
+    }
+
+    void Death()
+    {
+        if(playerHealth <= 0)
+        {
+            IsAlive = false;
+            Destroy(gameObject);
+        }
     }
 }

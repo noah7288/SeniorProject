@@ -4,12 +4,15 @@ using UnityEngine;
 
 public class EnemyController : MonoBehaviour
 {
-    public int enemyHealth = 5;
+    public int enemyHealth = 4;
     //public int enemyDamage = 1;
+
+    public GameObject Player;
+    private PlayerController playerScript;
 
     void Start()
     {
-        
+        playerScript = Player.GetComponent<PlayerController>();
     }
 
 
@@ -18,10 +21,11 @@ public class EnemyController : MonoBehaviour
         Death();
     }
 
-    private void OnTriggerEnter2D(Collider2D PlayerProjectile)
+    private void OnTriggerEnter2D(Collider2D other)
     {
-        enemyHealth = enemyHealth - 1;//replace 1 with player damage variable
-
+        if (other.gameObject.tag == "PlayerProjectile") { 
+            enemyHealth = enemyHealth - playerScript.playerDamage;
+    }
     }
 
     void Death()

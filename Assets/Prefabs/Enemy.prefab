@@ -157,4 +157,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4bffe7ebc60a74d47a5dfd3274f05cf4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemyHealth: 5
+  enemyHealth: 4
+  Player: {fileID: 576815945254144401, guid: a564f031976019e499de245e9124528e, type: 3}

@@ -158,4 +158,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemyHealth: 4
-  Player: {fileID: 576815945254144401, guid: a564f031976019e499de245e9124528e, type: 3}
+  Player: {fileID: 0}

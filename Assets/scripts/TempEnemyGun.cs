@@ -8,13 +8,13 @@ public class TempEnemyGun : MonoBehaviour
     public Transform gun;
     public GameObject projectile;
     public float projectileSpeed = 10;
-    // Start is called before the first frame update
+
     void Start()
     {
         
     }
 
-    // Update is called once per frame
+
     void Update()
     {
         if (Input.GetKeyDown(KeyCode.Space))

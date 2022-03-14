@@ -7,6 +7,9 @@ public class PlayerController : MonoBehaviour
     public GameObject projectile;
     public Transform gunEnd;
     public float projectileSpeed = 10f;
+    public GameObject playerMelee;
+
+    private float meleeTime = 0.5f;
 
     public bool IsAlive;
 
@@ -22,6 +25,7 @@ public class PlayerController : MonoBehaviour
     void start()
     {
         IsAlive = true;
+        playerMelee.SetActive(false);
     }
 
     void Update()
@@ -32,6 +36,18 @@ public class PlayerController : MonoBehaviour
             Shoot();
         }
         Death();
+        if (Input.GetButtonDown("Fire2"))
+        {
+            Melee();
+        }
+        if(meleeTime <= 0.0f)
+        {
+            playerMelee.SetActive(false);
+        }
+        if (meleeTime >= 0)
+        {
+            meleeTime = meleeTime - Time.deltaTime;
+        }
     }
 
     void FixedUpdate()
@@ -54,6 +70,12 @@ public class PlayerController : MonoBehaviour
         float angle = Mathf.Atan2(mousePos.y, mousePos.x) * Mathf.Rad2Deg;
         transform.rotation = Quaternion.Euler(new Vector3(0, 0, angle));
     } 
+
+    void Melee()
+    {
+        meleeTime = 0.5f;
+        playerMelee.SetActive(true);
+    }
 
     void Shoot()
     {

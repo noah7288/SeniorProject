@@ -2089,10 +2089,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
-    - target: {fileID: 576815945254144401, guid: a564f031976019e499de245e9124528e, type: 3}
-      propertyPath: m_TagString
-      value: Player
-      objectReference: {fileID: 0}
     - target: {fileID: 576815945254144406, guid: a564f031976019e499de245e9124528e, type: 3}
       propertyPath: m_RootOrder
       value: 2
@@ -2136,10 +2132,6 @@ PrefabInstance:
     - target: {fileID: 576815945254144406, guid: a564f031976019e499de245e9124528e, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 576815945254144407, guid: a564f031976019e499de245e9124528e, type: 3}
-      propertyPath: playerDamage
-      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a564f031976019e499de245e9124528e, type: 3}
@@ -2214,10 +2206,6 @@ PrefabInstance:
     - target: {fileID: 8024082210482779258, guid: cb6c79db73b2d684e98f45351e6ddf9a, type: 3}
       propertyPath: m_Name
       value: Enemy
-      objectReference: {fileID: 0}
-    - target: {fileID: 8024082210482779258, guid: cb6c79db73b2d684e98f45351e6ddf9a, type: 3}
-      propertyPath: m_TagString
-      value: Untagged
       objectReference: {fileID: 0}
     - target: {fileID: 8024082210482779261, guid: cb6c79db73b2d684e98f45351e6ddf9a, type: 3}
       propertyPath: Player

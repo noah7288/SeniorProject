@@ -26,6 +26,10 @@ public class EnemyController : MonoBehaviour
         if (other.gameObject.tag == "PlayerProjectile") { 
             enemyHealth = enemyHealth - playerScript.playerDamage;
     }
+        if (other.gameObject.tag == "PlayerMelee")
+        {
+            enemyHealth = enemyHealth - (playerScript.playerDamage*2);
+        }
     }
 
     void Death()

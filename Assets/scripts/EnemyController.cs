@@ -7,6 +7,11 @@ public class EnemyController : MonoBehaviour
     public int enemyHealth = 4;
     //public int enemyDamage = 1;
 
+    private int drop;
+    public GameObject droppedItem;
+    public GameObject droppedItem2;
+    public GameObject droppedItem3;
+
     public GameObject Player;
     private PlayerController playerScript;
 
@@ -36,6 +41,20 @@ public class EnemyController : MonoBehaviour
     {
         if (enemyHealth <= 0)
         {
+            drop = Random.Range(0, 10);
+            if(drop <= 2)
+            {
+                Instantiate(droppedItem, transform.position, droppedItem.transform.rotation);
+            }
+            else if(drop >= 9)
+            {
+                Instantiate(droppedItem2, transform.position, droppedItem.transform.rotation);
+            }
+            else
+            {
+                Instantiate(droppedItem3, transform.position, droppedItem.transform.rotation);
+            }
+            
             Destroy(gameObject);
         }
     }

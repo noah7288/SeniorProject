@@ -165,11 +165,12 @@ MonoBehaviour:
   gunEnd: {fileID: 576815944145361743}
   projectileSpeed: 15
   playerMelee: {fileID: 2684077465906382605}
-  IsAlive: 0
+  IsAlive: 1
   shootCooldown: 10
   moveSpeed: 10
   playerDamage: 1
   playerHealth: 15
+  playerHealthMax: 15
 --- !u!58 &576815945254144405
 CircleCollider2D:
   m_ObjectHideFlags: 0

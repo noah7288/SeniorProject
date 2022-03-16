@@ -11,7 +11,10 @@ public class PlayerController : MonoBehaviour
 
     private float meleeTime = 0.5f;
 
-    public bool IsAlive;
+    public bool IsAlive = true;
+
+    private float fireRate = 0.3f;
+    private float fireRateMax = 0.2f;
 
     public float shootCooldown = 10;
 
@@ -32,7 +35,7 @@ public class PlayerController : MonoBehaviour
     void Update()
     {
         Controls();
-        if (Input.GetButtonDown("Fire1") & shootCooldown >= 1)
+        if (Input.GetButton("Fire1") & shootCooldown >= 1 & fireRate >= fireRateMax)
         {
             Shoot();
         }
@@ -85,6 +88,8 @@ public class PlayerController : MonoBehaviour
         Rigidbody2D rb = bullet.GetComponent<Rigidbody2D>();
         rb.AddForce(gunEnd.up * projectileSpeed, ForceMode2D.Impulse);
         shootCooldown = shootCooldown - 1;
+        fireRate = 0;
+
     }
 
     void ShootTime()
@@ -92,6 +97,10 @@ public class PlayerController : MonoBehaviour
         if (shootCooldown <= 10)
         {
             shootCooldown = shootCooldown + Time.deltaTime;
+        }
+        if(fireRate <= fireRateMax)
+        {
+            fireRate = fireRate + Time.deltaTime;
         }
     }
 
@@ -108,7 +117,7 @@ public class PlayerController : MonoBehaviour
         if (other.gameObject.tag == "PowerupHealth")//restore health
         {
             playerHealth = playerHealth + 10;
-            if(playerHealth >= 16)
+            if(playerHealth >= playerHealthMax+1)
             {
                 playerHealth = playerHealthMax;
             }
@@ -124,7 +133,7 @@ public class PlayerController : MonoBehaviour
         if(playerHealth <= 0)
         {
             IsAlive = false;
-            Destroy(gameObject);
+            
         }
     }
 }

@@ -20,6 +20,7 @@ public class PlayerController : MonoBehaviour
     public int playerDamage = 1;
 
     public int playerHealth = 15;
+    public int playerHealthMax = 15;
 
 
     void start()
@@ -96,13 +97,25 @@ public class PlayerController : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if(other.gameObject.tag == "Powerup")
+        if(other.gameObject.tag == "Powerup")//damage boost
         {
             playerDamage++;
         }
-        if(other.gameObject.tag == "EnemyProjectile")
+        if(other.gameObject.tag == "EnemyProjectile")//damage player
         {
             playerHealth = playerHealth - 1;//change 1 to enemy damage variable
+        }
+        if (other.gameObject.tag == "PowerupHealth")//restore health
+        {
+            playerHealth = playerHealth + 10;
+            if(playerHealth >= 16)
+            {
+                playerHealth = playerHealthMax;
+            }
+        }
+        if (other.gameObject.tag == "PowerupAmmo")//restores amount of ammo
+        {
+            shootCooldown = shootCooldown + 3.0f;//change to ammo restore variable
         }
     }
 

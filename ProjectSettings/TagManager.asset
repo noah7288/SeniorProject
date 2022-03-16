@@ -8,6 +8,8 @@ TagManager:
   - Powerup
   - EnemyProjectile
   - PlayerMelee
+  - PowerupHealth
+  - PowerupAmmo
   layers:
   - Default
   - TransparentFX

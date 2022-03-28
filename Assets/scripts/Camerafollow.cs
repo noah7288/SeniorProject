@@ -6,15 +6,13 @@ public class Camerafollow : MonoBehaviour
 {
 
     public Transform PlayerTransform;
-    //public GameObject Player;
-    //private PlayerController PS;
+    
 
     void Start()
     {
-        //PS = Player.GetComponent<PlayerController>();
+        
     }
 
-    // Update is called once per frame
     void Update()
     {
         

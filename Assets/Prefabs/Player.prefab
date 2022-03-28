@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 299589584}
   - component: {fileID: 299589586}
   - component: {fileID: 299589585}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Sphere
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -90,7 +90,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 576815944145361743}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: gunEnd
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -123,7 +123,7 @@ GameObject:
   - component: {fileID: 576815945254144407}
   - component: {fileID: 576815945254144405}
   - component: {fileID: 576815945254144400}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Player
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -138,7 +138,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 576815945254144401}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: -13.676002, y: -13.676002, z: -1.0000011}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 6819172731354091570}
@@ -219,7 +219,7 @@ GameObject:
   - component: {fileID: 576815945840208977}
   - component: {fileID: 576815945840208978}
   - component: {fileID: 576815945840208979}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: PlayerCapsule
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -302,7 +302,7 @@ GameObject:
   - component: {fileID: 576815946047734718}
   - component: {fileID: 576815946047734719}
   - component: {fileID: 576815946047734712}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Cube
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -395,7 +395,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2937152948099573569}
   - component: {fileID: 8418943206629336760}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: NewPCArmChange
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -477,7 +477,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6401291656001031527}
   - component: {fileID: 7940313689388934542}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: PlayerMelee
   m_TagString: PlayerMelee
   m_Icon: {fileID: 0}
@@ -525,7 +525,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6819172731354091570}
   - component: {fileID: 4454517468112698822}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: PC1
   m_TagString: Untagged
   m_Icon: {fileID: 0}

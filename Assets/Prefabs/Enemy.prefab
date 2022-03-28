@@ -100,7 +100,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &8024082210213526272
 Transform:
   m_ObjectHideFlags: 0
@@ -189,6 +189,7 @@ GameObject:
   - component: {fileID: 8024082210482779263}
   - component: {fileID: 8024082210482779261}
   - component: {fileID: 8024082210482779260}
+  - component: {fileID: -6860393522140548016}
   m_Layer: 0
   m_Name: Enemy
   m_TagString: Untagged
@@ -228,7 +229,22 @@ MonoBehaviour:
   droppedItem: {fileID: 5166595326459849988, guid: c9e686821521ee44d94b7ac1fb62ba8a, type: 3}
   droppedItem2: {fileID: 661854497261594936, guid: 83b68f1506ccb404bbab1adf1751f2ef, type: 3}
   droppedItem3: {fileID: 2278017664404745860, guid: cab5254a6d52e8244bd1b9650715231f, type: 3}
+  player: {fileID: 576815945254144406, guid: a564f031976019e499de245e9124528e, type: 3}
+  moveSpeed: 2
   Player: {fileID: 576815945254144401, guid: a564f031976019e499de245e9124528e, type: 3}
+  sightRange: 5
+  attackRange: 2
+  playerInSightRange: 0
+  playerInAttackRange: 0
+  whatIsPlayer:
+    serializedVersion: 2
+    m_Bits: 128
+  whatIsGround:
+    serializedVersion: 2
+    m_Bits: 64
+  walkPoint: {x: 0, y: 0, z: 0}
+  walkPointRange: 0.5
+  agent: {fileID: 0}
 --- !u!58 &8024082210482779260
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -245,3 +261,24 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 0.63
+--- !u!50 &-6860393522140548016
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8024082210482779258}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 0
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0

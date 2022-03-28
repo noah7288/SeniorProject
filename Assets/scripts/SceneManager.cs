@@ -26,4 +26,12 @@ public class SceneManager : MonoBehaviour
             UnityEngine.SceneManagement.SceneManager.LoadScene("You Died");
         }
     }
+
+    private void OnTriggerEnter2D(Collider2D other)
+    {
+        if (other.gameObject.tag == "Player")
+        {
+            UnityEngine.SceneManagement.SceneManager.LoadScene("You Win");
+        }
+    }
 }

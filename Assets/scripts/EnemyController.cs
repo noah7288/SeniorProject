@@ -1,7 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.AI;
+using Pathfinding;
 
 public class EnemyController : MonoBehaviour
 {
@@ -15,36 +15,38 @@ public class EnemyController : MonoBehaviour
 
     public Transform player;
     private Rigidbody2D rb;
-    private Vector3 directionToPlayer;
-    private Vector3 localScale;
 
-    public float moveSpeed = 3f;
+    
 
     public GameObject Player;
     private PlayerController playerScript;
 
-    public float sightRange, attackRange;
-    public bool playerInSightRange, playerInAttackRange;
-    public LayerMask whatIsPlayer, whatIsGround;
+    public Transform gun;
+    public GameObject projectile;
+    public float projectileSpeed = 10;
 
-    public Vector3 walkPoint;
-    bool walkPointSet;
-    public float walkPointRange;
+    private float shootTimer;
 
-    public NavMeshAgent agent;
+
 
     void Start()
     {
         playerScript = Player.GetComponent<PlayerController>();
         rb = GetComponent<Rigidbody2D>();
-        localScale = transform.localScale;
+
+        
     }
 
+    
 
     void Update()
     {
         Move();
         Death();
+
+        
+            Shoot();
+        
     }
 
     void FixedUpdate()
@@ -57,49 +59,24 @@ public class EnemyController : MonoBehaviour
 
     void Move()
     {
-
-        playerInSightRange = Physics.CheckSphere(transform.position, sightRange, whatIsPlayer);
-        playerInAttackRange = Physics.CheckSphere(transform.position, attackRange, whatIsPlayer);
-
-        if (!playerInSightRange && !playerInAttackRange) Patroling();
-        if (playerInSightRange && !playerInAttackRange) ChasePlayer();
-        if (playerInSightRange && playerInAttackRange) AttackPlayer();
+        
+        
     }
 
-    private void Patroling()
-    {
-        if (!walkPointSet) SearchWalkPoint();
-
-        if (walkPointSet)
-            agent.SetDestination(walkPoint);
-
-        Vector3 distanceToWalkPoint = transform.position - walkPoint;
-
-        if (distanceToWalkPoint.magnitude < 1f)
-            walkPointSet = false;
-    }
-
-    private void SearchWalkPoint()
-    {
-        float randomZ = Random.Range(-walkPointRange, walkPointRange);
-        float randomX = Random.Range(-walkPointRange, walkPointRange);
-
-        walkPoint = new Vector3(transform.position.x + randomX, transform.position.y, transform.position.z + randomZ);
-
-        if (Physics.Raycast(walkPoint, -transform.up, 2f, whatIsGround))
-            walkPointSet = true;
-    }
-
-    private void ChasePlayer()
-    {
-        agent.SetDestination(player.position);
-
-    }
-
-    private void AttackPlayer()
+    
+    void Shoot()
     {
 
+        if (shootTimer <= 0)
+        {
+            GameObject bullet = Instantiate(projectile, gun.position, gun.rotation);
+            Rigidbody2D rb = bullet.GetComponent<Rigidbody2D>();
+            rb.AddForce(gun.up * projectileSpeed, ForceMode2D.Impulse);
+            shootTimer = Random.Range(1, 3);
+        }
+        shootTimer = shootTimer - Time.deltaTime;
     }
+    
 
     private void OnTriggerEnter2D(Collider2D other)
     {
@@ -117,7 +94,7 @@ public class EnemyController : MonoBehaviour
         if (enemyHealth <= 0)
         {
             drop = Random.Range(0, 10);
-            if(drop <= 2)
+            if(drop <= 1)
             {
                 Instantiate(droppedItem, transform.position, droppedItem.transform.rotation);
             }
@@ -125,7 +102,7 @@ public class EnemyController : MonoBehaviour
             {
                 Instantiate(droppedItem2, transform.position, droppedItem.transform.rotation);
             }
-            else
+            else if(drop >= 3 & drop <= 7)
             {
                 Instantiate(droppedItem3, transform.position, droppedItem.transform.rotation);
             }

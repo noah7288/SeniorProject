@@ -14,4 +14,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/You WIn.unity
     guid: c99a5f6478b68ca4fa02d9648942c38d
+  - enabled: 1
+    path: Assets/Scenes/TileMaker.unity
+    guid: bacd82d5c00c7d7468700a5aaf2d3ef0
   m_configObjects: {}

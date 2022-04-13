@@ -49,8 +49,9 @@ public class Projectile : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.gameObject.tag != "Player")
+        if (other.gameObject.tag != "Player" & other.gameObject.layer != 8 & other.gameObject.tag != "Trap")
         {
+
             Destroy(gameObject);
         }
     }

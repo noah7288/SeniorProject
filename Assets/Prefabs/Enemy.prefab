@@ -23,7 +23,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2345582694321533064}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0.473, y: 0.552, z: -1.057}
   m_LocalScale: {x: 0.7692308, y: 0.7692308, z: 1}
   m_Children: []
@@ -225,7 +225,7 @@ GameObject:
   - component: {fileID: 4364019069192395251}
   m_Layer: 0
   m_Name: Enemy
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -263,7 +263,7 @@ MonoBehaviour:
   droppedItem: {fileID: 5166595326459849988, guid: c9e686821521ee44d94b7ac1fb62ba8a, type: 3}
   droppedItem2: {fileID: 661854497261594936, guid: 83b68f1506ccb404bbab1adf1751f2ef, type: 3}
   droppedItem3: {fileID: 2278017664404745860, guid: cab5254a6d52e8244bd1b9650715231f, type: 3}
-  player: {fileID: 576815945254144406, guid: a564f031976019e499de245e9124528e, type: 3}
+  key: {fileID: 4314789488605247878, guid: 47ccc89f49942924688c8470f36ba163, type: 3}
   Player: {fileID: 576815945254144401, guid: a564f031976019e499de245e9124528e, type: 3}
   gun: {fileID: 8279358552262616541}
   projectile: {fileID: 5421488607440528813, guid: f427b42b427868341a3be7f9bfc74153, type: 3}
@@ -349,7 +349,7 @@ MonoBehaviour:
   radius: 0.83
   height: 2
   canMove: 1
-  maxSpeed: 3
+  maxSpeed: 5
   gravity: {x: NaN, y: NaN, z: NaN}
   groundMask:
     serializedVersion: 2
@@ -388,4 +388,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   version: 1
-  target: {fileID: 576815945254144406, guid: a564f031976019e499de245e9124528e, type: 3}
+  target: {fileID: 0}

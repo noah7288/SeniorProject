@@ -3,13 +3,14 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class SceneManager : MonoBehaviour
+public class Scenemanager : MonoBehaviour
 {
     public GameObject Player;
     private PlayerController playerScript;
 
     void Start()
     {
+        GameStats.Instance.Level = 1;
         playerScript = Player.GetComponent<PlayerController>();
     }
 
@@ -31,7 +32,10 @@ public class SceneManager : MonoBehaviour
     {
         if (other.gameObject.tag == "Player")
         {
-            UnityEngine.SceneManagement.SceneManager.LoadScene("You Win");
+            GameStats.Instance.Level++;
+            GameStats.Instance.PlayerHealth = playerScript.playerHealth;
+            SceneManager.LoadScene("TileMaker");
+
         }
     }
 }

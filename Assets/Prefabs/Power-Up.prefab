@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 661854497261594943}
   - component: {fileID: 661854497261594937}
   - component: {fileID: 661854497261594942}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Power-Up
   m_TagString: Powerup
   m_Icon: {fileID: 0}
@@ -73,7 +73,7 @@ GameObject:
   - component: {fileID: 661854498660234815}
   - component: {fileID: 661854498660234813}
   - component: {fileID: 661854498660234812}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Cube
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -153,7 +153,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2826330439715720251}
   - component: {fileID: 7044905576660578692}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: PowerUpDamage
   m_TagString: Untagged
   m_Icon: {fileID: 0}

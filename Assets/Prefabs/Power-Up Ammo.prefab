@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4743978585035891776}
   - component: {fileID: 1023377116071674534}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: PowerUpAmmo
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -93,7 +93,7 @@ GameObject:
   - component: {fileID: 2278017664404745859}
   - component: {fileID: 2278017664404745861}
   - component: {fileID: 2278017664404745858}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Power-Up Ammo
   m_TagString: PowerupAmmo
   m_Icon: {fileID: 0}
@@ -155,7 +155,7 @@ GameObject:
   - component: {fileID: 2278017666185589123}
   - component: {fileID: 2278017666185589121}
   - component: {fileID: 2278017666185589120}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Cube
   m_TagString: Untagged
   m_Icon: {fileID: 0}

@@ -83,7 +83,7 @@ public class GameStats : MonoBehaviour
     void DifficultyIncrease()
     {
         IncreaseTimerOverall = IncreaseTimerOverall + Time.deltaTime;
-        if(IncreaseTimerOverall >= 50.0f & overallDifficultyScore <= 10)
+        if(IncreaseTimerOverall >= 10.0f & overallDifficultyScore <= 10)//change to 25.0f
         {
             overallDifficultyScore = overallDifficultyScore + 1 + (score / 500);
             IncreaseTimerOverall = 0;

@@ -9,7 +9,7 @@ public class GameStats : MonoBehaviour
     public int PlayerHealth;
 
     public int enemiesDefeated;
-    public int powerUpsPicked;
+    //public int powerUpsPicked;
 
     public int score;
 

@@ -38,7 +38,6 @@ public class EnemyController : MonoBehaviour
         playerScript = Player.GetComponent<PlayerController>();
         rb = GetComponent<Rigidbody2D>();
 
-        //player = gameObject.transform.Find("Player");
 
         gameObject.GetComponent<AIDestinationSetter>().target = player;
     }
@@ -109,7 +108,7 @@ public class EnemyController : MonoBehaviour
             }
             GameStats.Instance.spawnCount = GameStats.Instance.spawnCount - 1;
             GameStats.Instance.enemiesDefeated++;
-            GameStats.Instance.score = GameStats.Instance.score + 10;
+            GameStats.Instance.score = GameStats.Instance.score + (10 * (GameStats.Instance.overallDifficultyScore / 2));
             Destroy(gameObject);
         }
     }

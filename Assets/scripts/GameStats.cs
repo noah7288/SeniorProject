@@ -41,8 +41,11 @@ public class GameStats : MonoBehaviour
 
     public int playerDamage;
 
+    private bool gamePaused;
+
     void Awake()
     {
+        gamePaused = false;
         isAlive = true;
         Level = 1;
         if (Instance == null)//creates single instance
@@ -64,7 +67,16 @@ public class GameStats : MonoBehaviour
     {
         DifficultyDecrease();
         DifficultyIncrease();
-
+        if (Input.GetKeyDown("q") & gamePaused == false)
+        {
+            Time.timeScale = 0;
+            gamePaused = true;
+        }
+        else if (Input.GetKeyDown("q") & gamePaused == true)
+        {
+            Time.timeScale = 1;
+            gamePaused = false;
+        }
         
     }
 

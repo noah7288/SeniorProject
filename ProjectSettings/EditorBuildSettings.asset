@@ -5,16 +5,19 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/SampleScene.unity
     guid: 2cda990e2423bbf4892e6590ba056729
+  - enabled: 1
+    path: Assets/Scenes/Start.unity
+    guid: eee403a86c22a084999c4dde8b3ee145
+  - enabled: 1
+    path: Assets/Scenes/TileMaker.unity
+    guid: bacd82d5c00c7d7468700a5aaf2d3ef0
   - enabled: 1
     path: Assets/Scenes/You Died.unity
     guid: d8d33bc6078879144a0841280f6ae74f
   - enabled: 1
     path: Assets/Scenes/You WIn.unity
     guid: c99a5f6478b68ca4fa02d9648942c38d
-  - enabled: 1
-    path: Assets/Scenes/TileMaker.unity
-    guid: bacd82d5c00c7d7468700a5aaf2d3ef0
   m_configObjects: {}

@@ -27,6 +27,8 @@ public class SceneChanger : MonoBehaviour
         if (GameStats.Instance.isAlive == false)
         {
             SceneManager.LoadScene("You Died");
+            GameStats.Instance.isAlive = true;
+            
         }
     }
 

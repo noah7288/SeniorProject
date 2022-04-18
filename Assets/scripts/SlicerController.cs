@@ -113,7 +113,7 @@ public class SlicerController : MonoBehaviour
             }
             GameStats.Instance.spawnCount = GameStats.Instance.spawnCount - 1;
             GameStats.Instance.enemiesDefeated++;
-            GameStats.Instance.score = GameStats.Instance.score + 10;
+            GameStats.Instance.score = GameStats.Instance.score + (10 * (GameStats.Instance.overallDifficultyScore / 2));
             Destroy(gameObject);
         }
     }

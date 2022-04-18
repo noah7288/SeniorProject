@@ -121,7 +121,7 @@ public class PlayerController : MonoBehaviour
     {
         if(other.gameObject.tag == "Powerup")//damage boost
         {
-            GameStats.Instance.score = GameStats.Instance.score + 15;
+            GameStats.Instance.score = GameStats.Instance.score + (15 * (GameStats.Instance.overallDifficultyScore / 2));
             if (damageBoosted == false)
             {
                 GameStats.Instance.playerDamage++;
@@ -147,7 +147,7 @@ public class PlayerController : MonoBehaviour
         }
         if (other.gameObject.tag == "PowerupHealth")//restore health
         {
-            GameStats.Instance.score = GameStats.Instance.score + 10;
+            GameStats.Instance.score = GameStats.Instance.score + (10 * (GameStats.Instance.overallDifficultyScore/2));
             playerHealth = playerHealth + 10;
             if(playerHealth >= playerHealthMax+1)
             {
@@ -157,7 +157,7 @@ public class PlayerController : MonoBehaviour
         }
         if (other.gameObject.tag == "PowerupAmmo")//restores amount of ammo
         {
-            GameStats.Instance.score = GameStats.Instance.score + 5;
+            GameStats.Instance.score = GameStats.Instance.score + (5 * (GameStats.Instance.overallDifficultyScore / 2));
             shootCooldown = shootCooldown + 4.0f;//change to ammo restore variable
             if(shootCooldown >= 10)
             {

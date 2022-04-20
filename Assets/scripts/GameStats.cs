@@ -45,6 +45,7 @@ public class GameStats : MonoBehaviour
 
     void Awake()
     {
+        Application.targetFrameRate = 45;
         gamePaused = false;
         isAlive = true;
         Level = 1;
